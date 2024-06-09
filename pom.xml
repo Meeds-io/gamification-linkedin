@@ -31,7 +31,7 @@
   </parent>
   <groupId>io.meeds.gamification-linkedin</groupId>
   <artifactId>gamification-linkedin-parent</artifactId>
-  <version>7.1.x-meed-SNAPSHOT</version>
+  <version>7.1.x-connector-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Meeds - Gamification LinkedIn - Parent POM</name>
   <description>Meeds Add-on for LinkedIn gamification add-on connector</description>
