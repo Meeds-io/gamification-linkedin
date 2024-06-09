@@ -25,7 +25,7 @@
   <parent>
     <groupId>io.meeds.gamification-linkedin</groupId>
     <artifactId>gamification-linkedin-parent</artifactId>
-    <version>7.0.x-SNAPSHOT</version>
+    <version>7.0.x-meed-SNAPSHOT</version>
   </parent>
   <artifactId>gamification-linkedin-webapp</artifactId>
   <packaging>war</packaging>
