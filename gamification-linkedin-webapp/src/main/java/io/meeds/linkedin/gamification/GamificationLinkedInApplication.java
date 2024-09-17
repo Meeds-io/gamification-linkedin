@@ -16,34 +16,26 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
-package io.meeds.gamification.linkedin;
+package io.meeds.linkedin.gamification;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration;
-import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
-import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.PropertySource;
 
 import io.meeds.spring.AvailableIntegration;
 import io.meeds.spring.kernel.PortalApplicationContextInitializer;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication(scanBasePackages = {
-    "io.meeds.gamification.linkedin",
-    AvailableIntegration.KERNEL_MODULE,
-    AvailableIntegration.WEB_SECURITY_MODULE,
-    AvailableIntegration.WEB_TRANSACTION_MODULE,
-  }, exclude = {
-    LiquibaseAutoConfiguration.class,
-    DataSourceAutoConfiguration.class,
-    DataSourceTransactionManagerAutoConfiguration.class,
-    HibernateJpaAutoConfiguration.class
+        GamificationLinkedInApplication.MODULE_NAME,
+        AvailableIntegration.KERNEL_MODULE,
+        AvailableIntegration.JPA_MODULE,
+        AvailableIntegration.LIQUIBASE_MODULE,
+        AvailableIntegration.WEB_MODULE,
 })
-@EnableCaching
+@EnableJpaRepositories(basePackages = GamificationLinkedInApplication.MODULE_NAME)
 @PropertySource("classpath:application.properties")
 @PropertySource("classpath:application-common.properties")
 @PropertySource("classpath:linkedin.properties")
 public class GamificationLinkedInApplication extends PortalApplicationContextInitializer {
-
+  public static final String MODULE_NAME = "io.meeds.linkedin.gamification";
 }

@@ -35,6 +35,9 @@
     <dependency>
       <groupId>io.meeds.social</groupId>
       <artifactId>social-component-core</artifactId>
+      <version>${io.meeds.social.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
     </dependency>
     <dependency>
       <groupId>io.meeds.social</groupId>
@@ -47,5 +50,14 @@
   </dependencies>
   <build>
     <finalName>gamification-linkedin-service</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <outputDirectory>/Users/serge/Downloads/meeds-community-7.0.x-meed-SNAPSHOT/lib</outputDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
