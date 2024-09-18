@@ -461,9 +461,10 @@ export default {
           this.displayNotificationAlert(error.message, 'error');
           this.editAccessToken();
         })
-        .finally(() => this.isFetchingProjects = false);
-
-      this.stepper = 3;
+        .finally(() => {
+          this.isFetchingProjects = false;
+          this.stepper = 3;
+        });
     }
   }
 };
