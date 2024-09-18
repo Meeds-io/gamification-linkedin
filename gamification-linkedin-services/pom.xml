@@ -54,9 +54,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <outputDirectory>/Users/serge/Downloads/meeds-community-7.0.x-meed-SNAPSHOT/lib</outputDirectory>
-        </configuration>
       </plugin>
     </plugins>
   </build>
