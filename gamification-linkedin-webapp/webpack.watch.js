@@ -5,7 +5,7 @@ const webpackCommonConfig = require('./webpack.prod.js');
 // the display name of the war
 const app = 'gamification-linkedin';
 
-const exoServerPath = '/exo-server';
+const exoServerPath = '/Users/serge/Downloads/meeds-community-7.0.x-meed-SNAPSHOT';
 
 let config = merge(webpackCommonConfig, {
   output: {

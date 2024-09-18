@@ -24,6 +24,11 @@ export function init() {
       iconColorClass: 'light-blue--text text--darken-4',
       match: (actionLabel) => [
         'postLiked',
+        'postComment',
+        'repost',
+        'mention',
+        'workFor',
+        'followCompany',
       ].includes(actionLabel),
       getLink: (realization) => {
         try {
@@ -34,7 +39,7 @@ export function init() {
           return null;
         }
       },
-      isExtensible: true
+      isExtensible: false
     },
   });
 }

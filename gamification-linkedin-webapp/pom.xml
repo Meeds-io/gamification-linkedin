@@ -92,6 +92,7 @@
         <artifactId>maven-war-plugin</artifactId>
         <configuration>
           <packagingExcludes>**/*.less,**/*.vue,css/lib/*,vue-app/**,js/mock/**/*,**-dev.*</packagingExcludes>
+          <outputDirectory>/Users/serge/Downloads/meeds-community-7.0.x-meed-SNAPSHOT/webapps</outputDirectory>
         </configuration>
       </plugin>
     </plugins>

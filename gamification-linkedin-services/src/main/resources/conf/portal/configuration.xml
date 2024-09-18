@@ -70,6 +70,168 @@
     </component-plugin>
   </external-component-plugins>
 
-  <import>jar:/conf/portal/gamification-linked-connector-configuration.xml</import>
+
+  <external-component-plugins>
+    <target-component>io.meeds.gamification.service.EventRegistry</target-component>
+    <component-plugin>
+      <name>PostComment</name>
+      <set-method>addPlugin</set-method>
+      <type>io.meeds.gamification.plugin.EventConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>event</name>
+          <object type="io.meeds.gamification.model.EventDTO">
+            <field name="title">
+              <string>postComment</string>
+            </field>
+            <field name="type">
+              <string>linkedin</string>
+            </field>
+            <field name="trigger">
+              <string>postComment</string>
+            </field>
+            <field name="cancellerEvents">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>postCommentDeleted</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+  <external-component-plugins>
+    <target-component>io.meeds.gamification.service.EventRegistry</target-component>
+    <component-plugin>
+      <name>Repost</name>
+      <set-method>addPlugin</set-method>
+      <type>io.meeds.gamification.plugin.EventConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>event</name>
+          <object type="io.meeds.gamification.model.EventDTO">
+            <field name="title">
+              <string>repost</string>
+            </field>
+            <field name="type">
+              <string>linkedin</string>
+            </field>
+            <field name="trigger">
+              <string>repost</string>
+            </field>
+            <field name="cancellerEvents">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>repostDeleted</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+  <external-component-plugins>
+    <target-component>io.meeds.gamification.service.EventRegistry</target-component>
+    <component-plugin>
+      <name>Mention</name>
+      <set-method>addPlugin</set-method>
+      <type>io.meeds.gamification.plugin.EventConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>event</name>
+          <object type="io.meeds.gamification.model.EventDTO">
+            <field name="title">
+              <string>mention</string>
+            </field>
+            <field name="type">
+              <string>linkedin</string>
+            </field>
+            <field name="trigger">
+              <string>mention</string>
+            </field>
+            <field name="cancellerEvents">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>mentionRemoved</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+  <external-component-plugins>
+    <target-component>io.meeds.gamification.service.EventRegistry</target-component>
+    <component-plugin>
+      <name>WorkFor</name>
+      <set-method>addPlugin</set-method>
+      <type>io.meeds.gamification.plugin.EventConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>event</name>
+          <object type="io.meeds.gamification.model.EventDTO">
+            <field name="title">
+              <string>workFor</string>
+            </field>
+            <field name="type">
+              <string>linkedin</string>
+            </field>
+            <field name="trigger">
+              <string>workFor</string>
+            </field>
+            <field name="cancellerEvents">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>workForRemoved</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+
+  <external-component-plugins>
+    <target-component>io.meeds.gamification.service.EventRegistry</target-component>
+    <component-plugin>
+      <name>FollowCompany</name>
+      <set-method>addPlugin</set-method>
+      <type>io.meeds.gamification.plugin.EventConfigPlugin</type>
+      <init-params>
+        <object-param>
+          <name>event</name>
+          <object type="io.meeds.gamification.model.EventDTO">
+            <field name="title">
+              <string>followCompany</string>
+            </field>
+            <field name="type">
+              <string>linkedin</string>
+            </field>
+            <field name="trigger">
+              <string>followCompany</string>
+            </field>
+            <field name="cancellerEvents">
+              <collection type="java.util.ArrayList" item-type="java.lang.String">
+                <value>
+                  <string>unfollowCompany</string>
+                </value>
+              </collection>
+            </field>
+          </object>
+        </object-param>
+      </init-params>
+    </component-plugin>
+  </external-component-plugins>
+
+<!--  <import>jar:/conf/portal/gamification-linked-connector-configuration.xml</import>-->
 
 </configuration>
