@@ -15,31 +15,17 @@
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-export function init() {
-  extensionRegistry.registerExtension('engagementCenterActions', 'user-actions', {
-    type: 'linkedin',
-    options: {
-      rank: 500,
-      icon: 'fab fa-linkedin',
-      iconColorClass: 'light-blue--text text--darken-4',
-      match: (actionLabel) => [
-        'postLiked',
-        'postComment',
-        'repost',
-        'mention',
-        'workFor',
-        'followCompany',
-      ].includes(actionLabel),
-      getLink: (realization) => {
-        try {
-          const objId = JSON.parse(realization.objectId);
-          realization.link = objId.stringUrl;
-          return realization.link;
-        } catch (e) {
-          return null;
-        }
-      },
-      isExtensible: true
-    },
+import * as linkedinConnectorService from '../linkedinAdminConnectorExtension/js/LinkedinConnectorService.js';
+
+if (!Vue.prototype.$linkedinConnectorService) {
+  window.Object.defineProperty(Vue.prototype, '$linkedinConnectorService', {
+    value: linkedinConnectorService,
+  });
+}
+
+import * as linkedinUtils from './js/LinkedinUtils.js';
+if (!Vue.prototype.$linkedinUtils) {
+  window.Object.defineProperty(Vue.prototype, '$linkedinUtils', {
+    value: linkedinUtils,
   });
 }

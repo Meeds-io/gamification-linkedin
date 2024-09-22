@@ -14,32 +14,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with this program; if not, write to the Free Software Foundation,
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
  */
+import '../connectorEventExtensions/initComponents';
+import '../connectorEventExtensions/services';
+
 export function init() {
-  extensionRegistry.registerExtension('engagementCenterActions', 'user-actions', {
-    type: 'linkedin',
-    options: {
-      rank: 500,
-      icon: 'fab fa-linkedin',
-      iconColorClass: 'light-blue--text text--darken-4',
-      match: (actionLabel) => [
-        'postLiked',
-        'postComment',
-        'repost',
-        'mention',
-        'workFor',
-        'followCompany',
-      ].includes(actionLabel),
-      getLink: (realization) => {
-        try {
-          const objId = JSON.parse(realization.objectId);
-          realization.link = objId.stringUrl;
-          return realization.link;
-        } catch (e) {
-          return null;
-        }
-      },
-      isExtensible: true
-    },
+  extensionRegistry.registerComponent('engagementCenterEvent', 'connector-event-extensions', {
+    id: 'linkedin-event',
+    name: 'linkedin',
+    vueComponent: Vue.options.components['linkedin-connector-event'],
+    isEnabled: (params) => [
+      'postLiked',
+      'postComment',
+      'repost',
+    ].includes(params?.trigger),
+    rank: 500,
   });
 }

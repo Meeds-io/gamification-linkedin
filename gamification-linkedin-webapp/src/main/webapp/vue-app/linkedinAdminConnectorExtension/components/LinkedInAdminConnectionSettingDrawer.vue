@@ -208,7 +208,8 @@ export default {
       return this.disabled || !this.secretKey || !this.apiKey || !this.redirectUrl;
     },
     redirectUrl() {
-      return `${window.location.origin}/gamification-linkedin/rest/settings/oauthCallback`;
+      // return `${window.location.origin}/gamification-linkedin/rest/settings/oauthCallback`;
+      return `${window.location.origin}/portal/rest/gamification/connectors/oauthCallback/linkedin`;
     }
   },
   methods: {

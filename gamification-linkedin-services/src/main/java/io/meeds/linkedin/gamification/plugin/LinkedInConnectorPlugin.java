@@ -65,6 +65,12 @@ public class LinkedInConnectorPlugin extends ConnectorPlugin {
         return NAME;
     }
 
+    /**
+     * THIS METHOD IS NOT NECESSARY BECAUSE IT DOES NOT SAVE THE ACCESS TOKEN
+     * IT HERE ONLY FOR DEMONSTRATION PURPOSES COZ IT FETCHES THE USERNAME FROM LINKEDIN
+     * AFTER DEMONSTRATION, WE ARE USING A CUSTOM REST API TO HANDLE THE ACCESS TOKEN
+     */
+
     @Override
     public String validateToken(String code) throws OAuthException {
         try {
